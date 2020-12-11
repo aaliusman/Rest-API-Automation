@@ -47,7 +47,8 @@ Headers/Cookies: Headers represent the meta-data associated with the API request
 https://docs.google.com/document/d/18FC3jDnsOol9zn3_KGSrjg35a4unpiSG/edit
 https://docs.google.com/document/d/1A3Q_HX8A_GtamXs5kpdZ_7jM8W-OajKS/edit
 
-You need to get the API contact, BASE URL, Resource, parameters, http method, what is the json body, what does it look, what is the response you are expecting. Your developers should share all details with you.
+You need to get the API contact, BASE URL, Resource, parameters, http method, what is the json body, what does it look,
+what is the response you are expecting. Your developers should share all details with you.
 
 {
     "status": "OK",
