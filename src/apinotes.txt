@@ -67,3 +67,5 @@ Arrays is collection of different elements. Arrays always inside the square brac
 
 Mock Response: You will get a contract first, Developer will start working on API, we shouldn’t wait until development
 is done, parallelly we should be working on automation using mock/dummy response.
+
+JIRA PROJ KEY - RES

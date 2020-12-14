@@ -1,7 +1,7 @@
 package restAPI;
 
 public class Payload {
-    public static String addPlace(){
+    public static String addPlace() {
         return "{\n" +
                 "  \"location\": {\n" +
                 "    \"lat\": -38.383494,\n" +
@@ -20,7 +20,7 @@ public class Payload {
                 "}\n";
     }
 
-    public static String coursePrice(){
+    public static String coursePrice() {
         return "{\n" +
                 "\n" +
                 "\"dashboard\": {\n" +
@@ -75,5 +75,29 @@ public class Payload {
                 "]\n" +
                 "\n" +
                 "}";
+    }
+
+    public static String addBook() {
+        String payload = "{\n" +
+                "\"name\":\"Learn Appium Automation with Java\",\n" +
+                "\"isbn\":\"16us83m123am\",\n" +
+                "\"aisle\":\"zay12383an213\",\n" +
+                "\"author\":\"John foe\"\n" +
+                "}\n";
+        return payload;
+    }
+
+    public static String addDynamicBook(String isbn, String aisle) {
+        return "{\n" +
+                "\"name\":\"Learn Appium Automation with Java\",\n" +
+                "\"isbn\":\"" + isbn + "\",\n" +
+                "\"aisle\":\"" + aisle + "\",\n" +
+                "\"author\":\"John foe\"\n" +
+                "}\n";
+    }
+    public static String deleteBook(String id) {
+        return "{\n" +
+                "    \"ID\":\"" + id + "\"\n" +
+                "}\n";
     }
 }
