@@ -1,6 +1,11 @@
 SoapUI – Service testing tool for webservices and REST APIs.
 Client – UI and Front end
 Server – Back end and data base.
+
+Two important thing in API is:
+    - How do you build your payload and how do you construct your request payload to send it to server.
+    - Once you get your response you, how do you parse your response to scan for your actual value.
+
 API – is an interface and play key role to of communication protocol between client and a server to simply the building
 of client-side software. To simplify to design process.We use API to communicate between front end and back end.
 It is also beneficial when it comes to programing language is used for front end is different than back end.
@@ -69,3 +74,61 @@ Mock Response: You will get a contract first, Developer will start working on AP
 is done, parallelly we should be working on automation using mock/dummy response.
 
 JIRA PROJ KEY - RES
+https://docs.atlassian.com/software/jira/docs/api/REST/1000.824.0/
+
+{{{{{{{{{{{{{{{{{{{{****************************************}}}}}}}}}}}}}}}}}}}}
+
+Types of Authentication to talk to our api.
+cookies authentication and key value.
+
+OAuth 2.0 API's using Postman and Rest Assured.
+OAuth is an umbrella. Different ways of achieve this, different grant types.(I can say i have worked on Authorization code grant type).
+
+To make your api more secure, comes with multiple authentication flow or multiple grant types. By using Authorization code and client credentials.
+Strong and flexible security mechanism.
+Example of OAuth 2.O, is when you try to sign in to some website instead of creating your own account you have an option
+to use your google/Facebook account to sign in and get all your information from there.
+
+Backend architecture of OAuth 2.0
+Client -> ClientID(public)               ->    Client SecretID             -> Resource Owner -> Resource/Authorization Server
+Gap.com   id That identifies the client        gap.com register with google   Human                  Google
+Gmail/Google will provide your first name, last name and email to gap.com to make process easy for both client and user.
+
+User will login to Google by hitting google Authorization server get code. Application will use this code to hit google resource server in back
+end to get Access token. Once Access token expire google will stop sharing your info with client.
+Application grants access to User by validating Access token.
+most important thing is how to get access token.
+
+
+Grant type: There are multiple types of grant type, we are using authorization code grant type.
+Scope: what user information client need from google.
+  two unique parameters:
+    client_id: this will be generated when user first time sign in to google.
+    client_secret: it's like a password.
+response_type: what response you are expecting back from google.
+redirect_url/CallbackURL: where google has to send back to your application or client, after you sign in successfully.
+grant_type:
+authorization server url: which 3rd party are you depending on, like facebook or google.
+access token url: where we exchange our code and get our access token.
+state: option parameter, random string.
+
+Another grant type is client credentials. no involvement of human/user. if interaction is only between application and resource party. if user is involve
+then it has to be authorization code.
+
+{{{{{{{{{{{{{{{{{{{{****************************************}}}}}}}}}}}}}}}}}}}}
+
+Serialization and Deserialization of your Request/Response payload with help of POJO class. To parse your JSON or construct back your JSON as body. Also
+we can use XML.
+
+Serialization - Converting java object into one request body as JSON or XML(pay load). Setter will play key role.
+    {
+    "message": "Hello"
+    }
+  POJO - Plain old Java object
+
+Deserialization - Concept is same as Serialization. we get value from response. Getter will play key role.
+We will learn how to deal with nested Array JSON response using POJO class.
+
+
+
+

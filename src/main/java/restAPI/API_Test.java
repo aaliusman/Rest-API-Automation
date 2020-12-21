@@ -28,25 +28,72 @@ public class API_Test {
         String place_id = jsonPath.getString("place_id");
 
 //        Update Place
+//        given().log().all().queryParam("key", "qaclick123")
+//                .body("{\n" +
+//                        "\"place_id\":\"" + place_id + "\",\n" +
+//                        "\"address\":\"Philadelphia\",\n" +
+//                        "\"key\":\"qaclick123\"\n" +
+//                        "}")
+//                .header("Content-Type", "application/json")
+//                .when().put("maps/api/place/update/json")
+//                .then().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated"));
+
         given().log().all().queryParam("key", "qaclick123")
                 .body("{\n" +
-                        "\"place_id\":\"" + place_id + "\",\n" +
+                        "\"place_id\":\""+place_id+"\",\n" +
+                        "\"name\": \"Usman Academy\",\n" +
                         "\"address\":\"Philadelphia\",\n" +
                         "\"key\":\"qaclick123\"\n" +
                         "}")
                 .header("Content-Type", "application/json")
-                .when().put("maps/api/place/update/json")
+                .when().put("/maps/api/place/update/json")
                 .then().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated"));
 
         // Get place
         String address = "Philadelphia";
-        String getPlaceResponse = given().log().all().queryParams("place_id", place_id, "key", "qaclick123")
-                .when().get("maps/api/place/get/json")
-                .then().assertThat().statusCode(200).body("address", equalTo("Philadelphia"))
-                .header("server", "Apache/2.4.18 (Ubuntu)").extract().response().asString();
+//        String getPlaceResponse = given().log().all().queryParams("place_id", place_id, "key", "qaclick123")
+//                .when().get("maps/api/place/get/json")
+//                .then().assertThat().statusCode(200).body("address", equalTo("Philadelphia"))
+//                .header("server", "Apache/2.4.18 (Ubuntu)").extract().response().asString();
+//
+//        JsonPath js = ReUsableMethod.rawToJson(getPlaceResponse);
+//        String newAddress = js.getString("address");
+//        Assert.assertEquals(address, newAddress, "New Address Doesn't Match with Expected address");
 
-        JsonPath js = ReUsableMethod.rawToJson(getPlaceResponse);
+
+        String getAddress = given().log().all().queryParams("place_id", place_id, "key", "qaclick123")
+                .when().get("maps/api/place/get/json")
+                .then().log().all().assertThat().statusCode(200).body("address", equalTo("Philadelphia"))
+                .header("Server", "Apache/2.4.18 (Ubuntu)").extract().response().asString();
+
+        JsonPath js = new JsonPath(getAddress);
         String newAddress = js.getString("address");
-        Assert.assertEquals(address, newAddress, "New Address Doesn't Match with Expected address");
+        Assert.assertEquals(newAddress, address, "New Address Doesn't Match with Expected address");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      }
 }

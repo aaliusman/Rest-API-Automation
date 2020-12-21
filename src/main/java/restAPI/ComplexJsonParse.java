@@ -9,6 +9,7 @@ public class ComplexJsonParse {
     public void complexJSONParse() {
         JsonPath js = new JsonPath(Payload.coursePrice());
 
+        //example of using mock response
         //by default we can use generic js.get method
         //Print Number of Courses
         int countCourses = js.getInt("courses.size()");
