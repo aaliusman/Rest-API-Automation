@@ -1,4 +1,4 @@
-package pojo;
+package pojoDeserialization;
 
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
@@ -28,7 +28,6 @@ public class OAuthPojo {
         String accessToken = js.getString("access_token");
         System.out.println(accessToken);
 
-        Thread.sleep(1000);
         GetCourse gc = given().queryParam("access_token", accessToken).expect().defaultParser(Parser.JSON)
                 .when()
                 .get("https://rahulshettyacademy.com/getCourse.php").as(GetCourse.class);

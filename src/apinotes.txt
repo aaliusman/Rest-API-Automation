@@ -3,6 +3,8 @@ SoapUI – Service testing tool for webservices and REST APIs.
 Client – UI and Front end
 Server – Back end and data base.
 
+JSON Editor to break up JSON file: https://jsoneditoronline.org/#left=local.gukoki&right=local.yasinu
+
 Two important thing in API is:
     - How do you build your payload and how do you construct your request payload to send it to server.
     - Once you get your response you, how do you parse your response to scan for your actual value.
@@ -130,6 +132,15 @@ Serialization - Converting java object into one request body as JSON or XML(pay 
 Deserialization - Concept is same as Serialization. we get value from response. Getter will play key role.
 We will learn how to deal with nested Array JSON response using POJO class.
 
-
+{
+{
+  "location": {
+    "lat": -38.383494,   <------ Nested JSON
+    "lng": 33.427362
+  }}
+  "types": [
+      "shoe park", <------ Arrays in square bracket
+      "shop"
+    ],
 
 
