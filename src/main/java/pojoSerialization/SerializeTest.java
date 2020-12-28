@@ -1,6 +1,7 @@
 package pojoSerialization;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class SerializeTest {
                 .when().post("maps/api/place/add/json")
                 .then().assertThat().statusCode(200).extract().response().asString();
 
-        System.out.println(response);
+           System.out.println(response);
+        JsonPath js = new JsonPath(response);
+        System.out.println(js.getString("place_id"));
+
     }
 }

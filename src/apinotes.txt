@@ -1,4 +1,11 @@
 Jira/Confluence page or wiki link
+Jira Filter
+project = projectname AND issuetype = Bug
+AND status in (Blocked, Defined, "Ready for Development", "In QA", Monitoring, "Dev Review", "Ready to Groom", "Ready for QA")
+AND resolution = Unresolved AND "Responsible Team" = teamName
+AND Severity = Major ORDER BY key ASC, priority DESC, updated DESC
+
+
 SoapUI – Service testing tool for webservices and REST APIs.
 Client – UI and Front end
 Server – Back end and data base.
@@ -142,5 +149,7 @@ We will learn how to deal with nested Array JSON response using POJO class.
       "shoe park", <------ Arrays in square bracket
       "shop"
     ],
+
+
 
 
